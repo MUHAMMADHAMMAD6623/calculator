@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A simple calculator">
+    <title>Calculator</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+        }
+
+        body {
+            height: 867px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.568);
+        }
+
+        .container {
+            background: rgba(24, 23, 23, 0.616);
+            border: 1px solid black;
+            border-radius: 5px;
+            width: 380px;
+            height: 450px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            box-shadow: rgba(240, 46, 170, 0.4) 5px 5px, rgba(240, 46, 170, 0.3) 10px 10px, rgba(240, 46, 170, 0.2) 15px 15px, rgba(240, 46, 170, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px;
+        }
+
+        .container button {
+            padding: 5px;
+            font-size: 1.8rem;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            border: none;
+            margin: 5px;
+            cursor: pointer;
+            background: rgba(20, 20, 20, 0.822);
+            color: white;
+            box-shadow: inset 5px 3px 1px 1px gray;
+            border: 2px solid black;
+        }
+
+        input {
+            width: 290px;
+            height: 40px;
+            background: #1b1b1bb7;
+            color: white;
+            border: 1px solid black;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            padding-left: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <input type="text" class="ans" disabled>
+        <div class="row-1">
+            <button onclick="appendseven()" class="btn">7</button>
+            <button onclick="appendeight()" class="btn">8</button>
+            <button onclick="appendnine()" class="btn">9</button>
+            <button class="imp" onclick="appenddiv()">/</button>
+        </div>
+        <div class="row-2">
+            <button onclick="appendfour()" class="btn">4</button>
+            <button onclick="appendfive()" class="btn">5</button>
+            <button onclick="appendsix()" class="btn">6</button>
+            <button class="imp" onclick="appendmul()">*</button>
+        </div>
+        <div class="row-3">
+            <button onclick="appendone()" class="btn">1</button>
+            <button onclick="appendtwo()" class="btn">2</button>
+            <button onclick="appendthree()" class="btn">3</button>
+            <button class="imp" onclick="appendsub()">-</button>
+        </div>
+        <div class="row-4">
+            <button onclick="appendzero()" class="btn">0</button>
+            <button onclick="clr()" class="veryimp">Ac</button>
+            <button class="imp" onclick="appendadd()">+</button>
+            <button class="imp" onclick="cal()">=</button>
+        </div>
+    </div>
+    <script>
+        const input = document.querySelector(".ans")
+        const btn = document.querySelectorAll(".btn")
+
+        function appendone() { input.value += 1 }
+        function appendtwo() { input.value += 2 }
+        function appendthree() { input.value += 3 }
+        function appendfour() { input.value += 4 }
+        function appendfive() { input.value += 5 }
+        function appendsix() { input.value += 6 }
+        function appendseven() { input.value += 7 }
+        function appendeight() { input.value += 8 }
+        function appendnine() { input.value += 9 }
+        function appendzero() { input.value += 0 }
+        function appendmul() { input.value += "*" }
+        function appenddiv() { input.value += "/" }
+        function appendadd() { input.value += "+" }
+        function appendsub() { input.value += "-" }
+
+        function clr() {
+            input.value = ''
+        }
+
+        function cal() {
+            input.value = eval(input.value)
+        }
+    </script>
+</body>
+
+</html> 
